@@ -1,4 +1,4 @@
-# Face detection iOS app
+# Face & body detection iOS app
 App, that detects faces and displayes them as rectangles on the screen in real time
 
 # System requirements
@@ -8,6 +8,6 @@ App, that detects faces and displayes them as rectangles on the screen in real t
 - Swift 6
 - UIKit
 - AVFoundation
-- Vision framework
+- Apple Vision framework
 
 # Demo
