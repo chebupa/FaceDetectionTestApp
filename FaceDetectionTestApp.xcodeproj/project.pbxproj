@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4651298E2CED39EB00BAC4BF /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 4651298D2CED39EB00BAC4BF /* Documentation.docc */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		4651298D2CED39EB00BAC4BF /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		466BA3822CC542DC00770B0D /* FaceDetectionTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +50,7 @@
 		466BA3792CC542DC00770B0D = {
 			isa = PBXGroup;
 			children = (
+				4651298D2CED39EB00BAC4BF /* Documentation.docc */,
 				466BA3842CC542DC00770B0D /* FaceDetectionTestApp */,
 				466BA3832CC542DC00770B0D /* Products */,
 			);
@@ -132,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4651298E2CED39EB00BAC4BF /* Documentation.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
