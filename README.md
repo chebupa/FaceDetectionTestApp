@@ -1,5 +1,5 @@
-# Face & body detection iOS app
-App, that detects faces and displayes them as rectangles on the screen in real time
+# VisioFace
+App that detects faces and body poses and displays them on the screen in real time
 
 # System requirements
 - iOS 15.0+
