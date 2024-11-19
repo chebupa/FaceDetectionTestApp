@@ -6,8 +6,8 @@ App, that detects faces and displayes them as rectangles on the screen in real t
 
 # Tech stack
 - Language: Swift 6
-- UI Frameworks: UIKit, AVFoundation, CoreAnimation
 - ML Framework: Apple Vision framework
+- UI Frameworks: UIKit, AVFoundation, CoreAnimation
 
 # Demo
 -
