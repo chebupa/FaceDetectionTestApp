@@ -12,16 +12,16 @@
 
 /* Begin PBXFileReference section */
 		4651298D2CED39EB00BAC4BF /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
-		466BA3822CC542DC00770B0D /* FaceDetectionTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		466BA3822CC542DC00770B0D /* VisioFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisioFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		466BA3942CC542DD00770B0D /* Exceptions for "FaceDetectionTestApp" folder in "FaceDetectionTestApp" target */ = {
+		466BA3942CC542DD00770B0D /* Exceptions for "FaceDetectionTestApp" folder in "VisioFace" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 466BA3812CC542DC00770B0D /* FaceDetectionTestApp */;
+			target = 466BA3812CC542DC00770B0D /* VisioFace */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -29,7 +29,7 @@
 		466BA3842CC542DC00770B0D /* FaceDetectionTestApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				466BA3942CC542DD00770B0D /* Exceptions for "FaceDetectionTestApp" folder in "FaceDetectionTestApp" target */,
+				466BA3942CC542DD00770B0D /* Exceptions for "FaceDetectionTestApp" folder in "VisioFace" target */,
 			);
 			path = FaceDetectionTestApp;
 			sourceTree = "<group>";
@@ -59,7 +59,7 @@
 		466BA3832CC542DC00770B0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				466BA3822CC542DC00770B0D /* FaceDetectionTestApp.app */,
+				466BA3822CC542DC00770B0D /* VisioFace.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +67,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		466BA3812CC542DC00770B0D /* FaceDetectionTestApp */ = {
+		466BA3812CC542DC00770B0D /* VisioFace */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 466BA3952CC542DD00770B0D /* Build configuration list for PBXNativeTarget "FaceDetectionTestApp" */;
+			buildConfigurationList = 466BA3952CC542DD00770B0D /* Build configuration list for PBXNativeTarget "VisioFace" */;
 			buildPhases = (
 				466BA37E2CC542DC00770B0D /* Sources */,
 				466BA37F2CC542DC00770B0D /* Frameworks */,
@@ -82,11 +82,11 @@
 			fileSystemSynchronizedGroups = (
 				466BA3842CC542DC00770B0D /* FaceDetectionTestApp */,
 			);
-			name = FaceDetectionTestApp;
+			name = VisioFace;
 			packageProductDependencies = (
 			);
 			productName = FaceDetectionTestApp;
-			productReference = 466BA3822CC542DC00770B0D /* FaceDetectionTestApp.app */;
+			productReference = 466BA3822CC542DC00770B0D /* VisioFace.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 466BA37D2CC542DC00770B0D /* Build configuration list for PBXProject "FaceDetectionTestApp" */;
+			buildConfigurationList = 466BA37D2CC542DC00770B0D /* Build configuration list for PBXProject "VisioFace" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				466BA3812CC542DC00770B0D /* FaceDetectionTestApp */,
+				466BA3812CC542DC00770B0D /* VisioFace */,
 			);
 		};
 /* End PBXProject section */
@@ -329,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		466BA37D2CC542DC00770B0D /* Build configuration list for PBXProject "FaceDetectionTestApp" */ = {
+		466BA37D2CC542DC00770B0D /* Build configuration list for PBXProject "VisioFace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				466BA3982CC542DD00770B0D /* Debug */,
@@ -338,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		466BA3952CC542DD00770B0D /* Build configuration list for PBXNativeTarget "FaceDetectionTestApp" */ = {
+		466BA3952CC542DD00770B0D /* Build configuration list for PBXNativeTarget "VisioFace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				466BA3962CC542DD00770B0D /* Debug */,
