@@ -118,21 +118,6 @@
 //        }
 //    }
 //}
-//
-//// MARK: - Vision -
-//
-//// MARK: - Shared
-//
-//private extension ViewController {
-//    
-//    func clearDrawings() {
-//        for drawing in drawings {
-//            drawing.removeFromSuperlayer()
-//        }
-//        drawings.removeAll()
-//    }
-//}
-//
 //// MARK: - Face recognition
 //
 //private extension ViewController {
@@ -165,56 +150,6 @@
 //            faceBoundingBoxShape.fillColor = UIColor.clear.cgColor
 //            view.layer.addSublayer(faceBoundingBoxShape)
 //            drawings.append(faceBoundingBoxShape)
-//        }
-//    }
-//}
-//
-//// MARK: - Body pose recognition
-//
-//private extension ViewController {
-//    
-//    func detectBodyPosition(image: CVPixelBuffer) {
-//        let bodyPositionDetectionRequest = VNDetectHumanBodyPoseRequest { vnRequest, error in
-//            DispatchQueue.main.async {
-//                if let results = vnRequest.results as? [VNHumanBodyPoseObservation], results.count > 0 {
-//                    self.handleBodyPoseDetectionResults(bodyPoses: results, pixelBuffer: image)
-//                }
-//            }
-//        }
-//        let imageResultHandler = VNImageRequestHandler(cvPixelBuffer: image, orientation: .leftMirrored, options: [:])
-//        try? imageResultHandler.perform([bodyPositionDetectionRequest])
-//    }
-//    
-//    func handleBodyPoseDetectionResults(bodyPoses: [VNHumanBodyPoseObservation], pixelBuffer: CVPixelBuffer) {
-//        
-//        guard let previewLayer = previewLayer else { return }
-//        
-//        clearDrawings()
-//        
-//        let torsoJointNames: [VNHumanBodyPoseObservation.JointName] = [
-//            .neck,
-//            .rightShoulder, .leftShoulder,
-//            .rightHip, .leftHip,
-//            .root
-//        ]
-//        
-//        for bodyPose in bodyPoses {
-//            
-//            let imagePoints: [CGPoint] = torsoJointNames.compactMap { jointName in
-//                guard let point = try? bodyPose.recognizedPoints(.all)[jointName], point.confidence > 0 else { return nil }
-//                return VNImagePointForNormalizedPoint(
-//                    point.location,
-//                    Int(previewLayer.bounds.width),
-//                    Int(previewLayer.bounds.height)
-//                )
-//            }
-//            
-//            for imagePoint in imagePoints {
-//                let shapeLayer = CAShapeLayer()
-//                shapeLayer.path = UIBezierPath(rect: .init(x: imagePoint.x, y: imagePoint.y, width: 10, height: 10)).cgPath
-//                view.layer.addSublayer(shapeLayer)
-//                drawings.append(shapeLayer)
-//            }
 //        }
 //    }
 //}
@@ -292,6 +227,7 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let bodyPoseRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:])
         let faceRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .leftMirrored, options: [:])
         
+        // Body pose detection
         do {
             try bodyPoseRequestHandler.perform([bodyPoseRequest])
             guard let observations = bodyPoseRequest.results else { return }
@@ -303,15 +239,16 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             print("Failed to perform request: \(error)")
         }
         
-        do {
-            try faceRequestHandler.perform([faceDetectionRequest])
-            guard let observations = faceDetectionRequest.results else { return }
-            DispatchQueue.main.async {
-                self.handleFaceObservations(observations)
-            }
-        } catch {
-            print("Failed to perform request: \(error)")
-        }
+        // Face detection
+//        do {
+//            try faceRequestHandler.perform([faceDetectionRequest])
+//            guard let observations = faceDetectionRequest.results else { return }
+//            DispatchQueue.main.async {
+//                self.handleFaceObservations(observations)
+//            }
+//        } catch {
+//            print("Failed to perform request: \(error)")
+//        }
     }
 }
 
@@ -341,22 +278,18 @@ private extension ViewController {
     
     func drawFaceBox(observedFace: VNFaceObservation) {
         
-//        clearDrawings()
-        
         guard let previewLayer = previewLayer else { return }
         
-//        for face in observedFaces {
-            let faceBoundingBoxOnScreen = previewLayer.layerRectConverted(fromMetadataOutputRect: observedFace.boundingBox)
-            let faceBoundingBoxPath = CGPath(rect: faceBoundingBoxOnScreen, transform: nil)
-            let faceBoundingBoxShape = CAShapeLayer()
-            
-            faceBoundingBoxShape.strokeColor = UIColor.green.cgColor
-            faceBoundingBoxShape.path = faceBoundingBoxPath
-            faceBoundingBoxShape.fillColor = UIColor.clear.cgColor
-//            view.layer.addSublayer(faceBoundingBoxShape)
-//            drawings.append(faceBoundingBoxShape)
-            overlayLayer.addSublayer(faceBoundingBoxShape)
-//        }
+        let faceBoundingBoxOnScreen = previewLayer.layerRectConverted(fromMetadataOutputRect: observedFace.boundingBox)
+        let faceBoundingBoxPath = CGPath(rect: faceBoundingBoxOnScreen, transform: nil)
+        let faceBoundingBoxShape = CAShapeLayer()
+        
+        faceBoundingBoxShape.strokeColor = UIColor.green.cgColor
+        faceBoundingBoxShape.path = faceBoundingBoxPath
+        faceBoundingBoxShape.fillColor = UIColor.clear.cgColor
+        //            view.layer.addSublayer(faceBoundingBoxShape)
+        //            drawings.append(faceBoundingBoxShape)
+        overlayLayer.addSublayer(faceBoundingBoxShape)
     }
     
     func handleBodyPoseObservations(_ observations: [VNHumanBodyPoseObservation]) {
