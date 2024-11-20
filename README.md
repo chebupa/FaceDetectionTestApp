@@ -10,5 +10,7 @@ App that detects faces and body poses and displays them on the screen in real ti
 - UI Frameworks: UIKit, AVFoundation, CoreAnimation
 
 # Demo
-<img src="README_assets/CVex1.gif"/>
-<img src="README_assets/CVex2.gif"/>
+<div>
+  <img src="README_assets/CVex1.gif">
+  <img src="README_assets/CVex2.gif">
+</div>
