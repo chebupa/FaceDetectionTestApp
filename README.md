@@ -11,6 +11,6 @@ App that detects faces and body poses and displays them on the screen in real ti
 
 # Demo
 <div>
-  <img src="README_assets/CVex1.gif" width="200px">
-  <img src="README_assets/CVex2.gif" width="200px">
+  <img src="README_assets/CVex1.gif" width="300px">
+  <img src="README_assets/CVex2.gif" width="300px">
 </div>
